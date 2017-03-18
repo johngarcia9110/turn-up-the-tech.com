@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../firebase';
 import AddLaptop from './admin/AddLaptop';
+import LaptopList from './admin/LaptopList';
 
 
 class Admin extends Component{
@@ -20,7 +21,7 @@ class Admin extends Component{
                         <AddLaptop />
                     </div>
                     <div className="col-lg-6">
-                        Laptop lists
+                        <LaptopList />
                     </div>
                 </div>
             </div>
@@ -29,7 +30,7 @@ class Admin extends Component{
 }
 
 function mapStateToProps(state){
-    console.log('state',state);
+    console.log('main state',state);
     return {};
 }
 

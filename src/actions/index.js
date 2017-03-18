@@ -8,10 +8,11 @@ export function logUser(email){
     return action;
 }
 
-export function setLaptops(laptop){
+export function setLaptops(laptops){
     const action = {
         type : SET_LAPTOPS,
-        laptop
+        laptops
     }
+    console.log('setLaptop action',  action);
     return action;
 }

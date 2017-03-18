@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { firebaseApp, laptopRef } from '../../firebase';
 import FileUploader from 'react-firebase-file-uploader';
 import { connect } from 'react-redux';
+//import { setLaptop } from '../../actions';
 
 class AddLaptop extends Component{
     constructor(props){
@@ -23,7 +24,7 @@ class AddLaptop extends Component{
 
     handleUploadError = (error) => {
         this.setState({ isUploading : false });
-        console.log('Image Upload Error:', error);
+        //console.log('Image Upload Error:', error);
     }
 
     handleUploadSuccess = (filename) => {
@@ -76,7 +77,7 @@ class AddLaptop extends Component{
                     }
                     {
                         this.state.laptopImageURL &&
-                        <img src={this.state.laptopImageURL} alt="Current Laptop"/>
+                        <img class="laptop-preview-img" src={this.state.laptopImageURL} alt="Current Laptop"/>
                     }
                      <FileUploader
                         accept="image/*"
@@ -99,9 +100,9 @@ class AddLaptop extends Component{
 }
 
 function mapStateToProps(state){
-    const { laptop } = state;
+    console.log('addlaptopstate', state);
     return {
-        laptop
+        laptop : state
     }
 }
 

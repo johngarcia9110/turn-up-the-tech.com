@@ -1,4 +1,4 @@
-import { SET_LAPTOP } from '../constants';
+import { SET_LAPTOPS } from '../constants';
 
 const laptop = (action) =>{
     let {title, category, productLink, description, laptopImageURL} = action;
@@ -13,8 +13,9 @@ const laptop = (action) =>{
 
 export default (state = [], action) => {
     let laptops = null;
+    //console.log('action',action)
     switch(action.type){
-        case SET_LAPTOP :
+        case SET_LAPTOPS :
             laptops = [...state, laptop(action)];
             return laptops;
         default :

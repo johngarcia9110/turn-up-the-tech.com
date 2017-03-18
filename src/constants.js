@@ -1,2 +1,2 @@
-const SIGNED_IN = 'SIGNED_IN';
-const SET_LAPTOPS = 'SET_LAPTOPS';
+export const SIGNED_IN = 'SIGNED_IN';
+export const SET_LAPTOPS = 'SET_LAPTOPS';
