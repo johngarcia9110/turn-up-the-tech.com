@@ -1,1 +1,2 @@
 const SIGNED_IN = 'SIGNED_IN';
+const SET_LAPTOPS = 'SET_LAPTOPS';

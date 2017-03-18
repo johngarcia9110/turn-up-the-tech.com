@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { firebaseApp } from '../../firebase';
+import { firebaseApp, laptopRef } from '../../firebase';
 import FileUploader from 'react-firebase-file-uploader';
+import { connect } from 'react-redux';
 
 class AddLaptop extends Component{
     constructor(props){
@@ -28,6 +29,11 @@ class AddLaptop extends Component{
     handleUploadSuccess = (filename) => {
         this.setState({ progress : 100, isUploading : false });
         firebaseApp.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({laptopImageURL: url}));
+    }
+
+    submitLaptop(){
+        const {title, category, productLink, description, laptopImageURL} = this.state;
+        laptopRef.push({title, category, productLink, description, laptopImageURL});
     }
 
     render(){
@@ -85,10 +91,18 @@ class AddLaptop extends Component{
                 </div>
                 <button className="btn btn-success" 
                     type="button" 
-                    onClick={() => console.log('this.state', this.state)}
+                    onClick={() => this.submitLaptop()}
                     >Submit</button>
             </div>
         )
     }
 }
-export default AddLaptop;
+
+function mapStateToProps(state){
+    const { laptop } = state;
+    return {
+        laptop
+    }
+}
+
+export default connect(mapStateToProps, null)(AddLaptop);

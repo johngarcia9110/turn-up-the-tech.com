@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { firebaseApp } from '../firebase';
 import AddLaptop from './admin/AddLaptop';
+
 
 class Admin extends Component{
 
@@ -25,4 +27,10 @@ class Admin extends Component{
         )
     }
 }
-export default Admin;
+
+function mapStateToProps(state){
+    console.log('state',state);
+    return {};
+}
+
+export default connect(mapStateToProps, null)(Admin);
