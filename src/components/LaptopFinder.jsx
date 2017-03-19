@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import FinderForm from './laptopFinder/FinderForm';
 
 class LaptopFinder extends Component{
+    
     render(){
         return(
             <div className="page lf-page">
-                <div>LaptopFinder</div>
+                <FinderForm />
             </div>
         )
     }

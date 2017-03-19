@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../firebase';
+//import { setLaptops, logUser } from '../actions';
 import AddLaptop from './admin/AddLaptop';
 import LaptopList from './admin/LaptopList';
 
@@ -12,6 +13,7 @@ class Admin extends Component{
     }
 
     render(){
+        console.log('admin state', this.props.state);
         return(
             <div className="page blog-page">
                 <h1>Admin Panel</h1>
@@ -31,7 +33,10 @@ class Admin extends Component{
 
 function mapStateToProps(state){
     console.log('main state',state);
-    return {};
+    //const { email, laptops} = state;
+    return {
+        state
+    };
 }
 
 export default connect(mapStateToProps, null)(Admin);

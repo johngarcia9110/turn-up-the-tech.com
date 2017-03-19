@@ -16,13 +16,13 @@ class LaptopList extends Component{
                 let {title, category, productLink, description, laptopImageURL} = laptop.val();
                 laptops.push({title, category, productLink, description, laptopImageURL});
             })
-            console.log('laptops', laptops);
+            //console.log('laptops', laptops);
             this.props.setLaptops(laptops);
         })
     }
 
     render(){
-        console.log('This.props', this.props.laptops);
+        console.log('This.props', this.props);
         return(
             <div className="admin-laptop-list">
                 {
@@ -46,11 +46,13 @@ class LaptopList extends Component{
 }
 
 function mapStateToProps(state){
-    console.log('laptopliststate', state);
+    //console.log('laptopliststate', state);
+    let { laptops, user } = state;
     return{
-        laptops : state
+        laptops,
+        user
     }
 
 }
 
-export default connect(mapStateToProps,{ setLaptops })(LaptopList);
+export default connect(mapStateToProps, { setLaptops })(LaptopList);

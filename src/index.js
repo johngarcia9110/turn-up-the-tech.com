@@ -14,6 +14,7 @@ import About from './components/About';
 import Blog from './components/Blog';
 import SignIn from './components/SignIn';
 import LaptopFinder from './components/LaptopFinder';
+import BlogPost from './components/admin/BlogPost';
 import Admin from './components/Admin';
 import NotFound from './components/NotFound';
 
@@ -42,9 +43,10 @@ ReactDOM.render(
             <Route path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/blog" component={Blog}/>
-            <Route path="/sign-in" component={SignIn} onEnter={requireAuth}/>
+            <Route path="/sign-in" component={SignIn} onEnter={requireAuth()}/>
             <Route path="/admin" component={Admin} />
             <Route path="/laptop-finder" component={LaptopFinder}/>
+            <Route path="/admin/blogpost" component={BlogPost}/>
             <Route path="/404" component={NotFound} />
             <Redirect from="*" to="/404"/>
         </Router>

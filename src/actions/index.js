@@ -13,6 +13,6 @@ export function setLaptops(laptops){
         type : SET_LAPTOPS,
         laptops
     }
-    console.log('setLaptop action',  action);
+    //console.log('setLaptop action',  action);
     return action;
 }
