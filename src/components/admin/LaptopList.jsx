@@ -7,6 +7,7 @@ import LaptopItem from './LaptopItem';
 
 class LaptopList extends Component{
 
+
     componentDidMount(){
         laptopRef.on('value', snap =>{
             
